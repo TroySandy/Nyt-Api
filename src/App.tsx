@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Clock from "./components/Clock/Clock";
+import FetchChallenge from './components/TuesdayChallenge/TS_React_Challenge'
+import Extra from './components/V2_TuesChallenge/AdditionalWay'
+import NytApiSearch from './components/WednesdayChallenge/NytSearch'
+let testProp: string = "Am I getting passed to the Clock component?";
+let optionalProp: string = "You sure are!";
 
-function App() {
+const App: React.FunctionComponent = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="verticalCenter">
+        <Clock testProp={testProp} optionalProp={optionalProp} />
+        <hr/>
+        <FetchChallenge />
+        <hr/>
+        <Extra label={'Here is another way that I found'}/>
+        <hr/>
+        <NytApiSearch />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
