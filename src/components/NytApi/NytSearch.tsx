@@ -57,23 +57,31 @@ export default class NytApiSearch extends React.Component<{}, NytState> {
     console.log("down");
 
     if (this.state.pageNumber > 0) {
-      this.setState({
-        pageNumber: this.state.pageNumber - 1,
-      });
-      console.log(this.state.pageNumber, "pageNumber");
-      this.FetchResults();
+      this.setState(
+        {
+          pageNumber: this.state.pageNumber - 1,
+        },
+        () => {
+          console.log(this.state.pageNumber, "pageNumber");
+          this.FetchResults();
+        }
+      );
     }
   };
 
   pageUp = () => {
     console.log("up");
 
-    this.setState({
-      pageNumber: this.state.pageNumber + 1,
-    });
-    console.log(this.state.pageNumber, "pageNumber");
+    this.setState(
+      {
+        pageNumber: this.state.pageNumber + 1,
+      },
+      () => {
+        console.log(this.state.pageNumber, "pageNumber");
 
-    this.FetchResults();
+        this.FetchResults();
+      }
+    );
   };
 
   render() {
@@ -135,10 +143,7 @@ export default class NytApiSearch extends React.Component<{}, NytState> {
           <hr />
 
           <div hidden={this.state.button}>
-            <button
-              className="pageDown"
-              onClick={this.pageDown}
-            >
+            <button className="pageDown" onClick={this.pageDown}>
               Previous Page
             </button>
             <button className="pageUp" onClick={this.pageUp}>
