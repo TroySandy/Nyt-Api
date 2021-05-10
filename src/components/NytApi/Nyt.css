@@ -1,0 +1,20 @@
+.results {
+  display: block;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+}
+.list {
+  width: 50%;
+
+  margin: auto;
+}
+li {
+  list-style: none;
+  word-wrap: none;
+}
+
+.form {
+  justify-content: center;
+  text-align: center;
+}
