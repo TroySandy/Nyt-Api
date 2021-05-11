@@ -183,15 +183,15 @@ const NytDisplay = (props: IProps) => {
   // console.log("PROPS", props.keys);
   return (
     <div className="results">
-      <h2 className="heading">{props.headline}</h2>
-      <h4 className="abstract">{props.heading}</h4>
       <a href={props.web_url} target="_blank">
+      <h2 className="heading">{props.headline}</h2>
+      </a>
+      <h4 className="abstract">{props.heading}</h4>
         <img
           src={`https://www.nytimes.com/${props.img}`}
           alt="nyt pic"
           className="image"
         />
-      </a>
       <ul className="list">
         {props.keys.map((key: any) => {
           // console.log(key);
